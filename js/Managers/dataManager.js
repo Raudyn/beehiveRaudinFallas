@@ -1,6 +1,6 @@
-class DataManager { // se encarga de desscargar los datos 
-    constructor(){
-
+class DataManager { // se encarga de desscargar solo los datos 
+    constructor(appManager){
+        this.appManager = appManager;
     this.bees = [];
     this.posts = [];
     this.albunes = [];
@@ -15,6 +15,7 @@ class DataManager { // se encarga de desscargar los datos
     }
 
     start(){
+        this.appManager.uiManager.showLoading();
         this.sendRequest(this.beesUrl, this.getBeesComplete.bind(this));
         this.sendRequest(this.postsUrl, this.getPostsComplete.bind(this));
         this.sendRequest(this.albumsUrl, this.getAlbumsComplete.bind(this));
