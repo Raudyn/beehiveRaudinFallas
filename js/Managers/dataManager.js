@@ -1,20 +1,20 @@
 class DataManager { // se encarga de desscargar solo los datos 
-    constructor(appManager){
+    constructor(appManager) {
         this.appManager = appManager;
-    this.bees = [];
-    this.posts = [];
-    this.albunes = [];
-    this.toDos = [];
-    this.beesUrl = 'https://beehive-270a2.firebaseio.com/data/users.json';
-    this.postsUrl = 'https://beehive-270a2.firebaseio.com/data/posts.json';
-    this.commentsUrl = 'https://beehive-270a2.firebaseio.com/data/comments.json';
-    this.albumsUrl = 'https://beehive-270a2.firebaseio.com/data/albums.json';
-    this.photosUrl = 'https://beehive-270a2.firebaseio.com/data/photos.json';
-    this.toDoUrl = 'https://beehive-270a2.firebaseio.com/data/todos.json';
+        this.bees = [];
+        this.posts = [];
+        this.albunes = [];
+        this.toDos = [];
+        this.beesUrl = 'https://beehive-270a2.firebaseio.com/data/users.json';
+        this.postsUrl = 'https://beehive-270a2.firebaseio.com/data/posts.json';
+        this.commentsUrl = 'https://beehive-270a2.firebaseio.com/data/comments.json';
+        this.albumsUrl = 'https://beehive-270a2.firebaseio.com/data/albums.json';
+        this.photosUrl = 'https://beehive-270a2.firebaseio.com/data/photos.json';
+        this.toDoUrl = 'https://beehive-270a2.firebaseio.com/data/todos.json';
 
     }
 
-    start(){
+    start() {
         this.appManager.uiManager.showLoading();
         this.sendRequest(this.beesUrl, this.getBeesComplete.bind(this));
         this.sendRequest(this.postsUrl, this.getPostsComplete.bind(this));
@@ -23,7 +23,7 @@ class DataManager { // se encarga de desscargar solo los datos
         this.sendRequest(this.toDoUrl, this.getToDosComplete.bind(this));
         console.log(this.bees);
     }
-    
+
     sendRequest(url, callBack) {
         var request = new XMLHttpRequest();
         request.addEventListener('load', callBack);
@@ -47,7 +47,7 @@ class DataManager { // se encarga de desscargar solo los datos
                     beeData.email,
                     beeData.website,
                     beeData.id);
-                    this.bees.push(bee);
+                this.bees.push(bee);
             });
 
         } else {
@@ -55,7 +55,7 @@ class DataManager { // se encarga de desscargar solo los datos
         }
     }
 
-    
+
 
     getPostsComplete(e) {
 
@@ -123,7 +123,7 @@ class DataManager { // se encarga de desscargar solo los datos
 
     //     Albums      //
 
-    
+
     getAlbumsComplete(e) {
 
         var request = e.target;
@@ -155,7 +155,7 @@ class DataManager { // se encarga de desscargar solo los datos
     //     photos      //
 
 
-    
+
     getPhotosComplete(e) {
 
         var request = e.target;

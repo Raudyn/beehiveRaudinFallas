@@ -1,9 +1,9 @@
 class UIManager {
-    constructor(appManager){
+    constructor(appManager) {
         this.appManager = appManager;
     }
 
-    showLoading(){
+    showLoading() {
         console.log('SHOW LOADING');
     }
 }
