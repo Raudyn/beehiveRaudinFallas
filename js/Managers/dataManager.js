@@ -21,7 +21,6 @@ class DataManager { // se encarga de desscargar solo los datos
         this.sendRequest(this.albumsUrl, this.getAlbumsComplete.bind(this));
         this.sendRequest(this.photosUrl, this.getPhotosComplete.bind(this));
         this.sendRequest(this.toDoUrl, this.getToDosComplete.bind(this));
-        console.log(this.bees);
     }
 
     sendRequest(url, callBack) {
@@ -105,6 +104,8 @@ class DataManager { // se encarga de desscargar solo los datos
                 var comment = new Comment(this.commentData.body, this.commentData.email, this.commentData.id, this.commentData.name, this.commentData.postId);
                 this.addCommentToPost(comment);
             }
+
+            this.appManager.uiManager.showUI();
 
         } else {
             console.log('error');
