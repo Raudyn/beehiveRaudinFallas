@@ -1,6 +1,6 @@
-window.addEventListener('load', Proyecto, false);
+window.addEventListener('load', init, false);
 
-function Proyecto() {
-    
-    var appManager = SingletonFactory.getinstance();
+function init() {
+    console.log('Init');
+    var appManager = AppManager.getInstance();
 }

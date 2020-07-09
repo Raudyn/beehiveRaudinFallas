@@ -20,7 +20,7 @@ class BeeComponent extends Component {
 
     onContainerClick(){
         //console.log(this.model);
-        var appManager = SingletonFactory.getinstance;
+        var appManager = AppManager.getInstance();
         appManager.uiManager.refreshPostsComponet(this.model);
         
     }
