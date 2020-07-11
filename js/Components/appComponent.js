@@ -10,6 +10,7 @@ class AppComponent extends Component {
         this.section2.classList.add('section2');
         this.container.appendChild(this.section2);
 
+        this.loadingComponent = new LoadinComponent(this.container);
         this.beesComponent = new BeesComponent(this.section1);
         this.postComponent = new PostComponent(this.section1);
         this.toDosComponent = new ToDosComponent(this.section2);

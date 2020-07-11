@@ -1,7 +1,6 @@
 class UIManager {
     constructor(appManager) {
         this.appManager = appManager;
-        this.loadingComponent = new LoadinComponent(document.body);
         this.headerComponent = new HeaderComponent(document.body);
         this.appComponent = new AppComponent(document.body);
     }
@@ -11,7 +10,7 @@ class UIManager {
     }
 
     showUI(){
-        this.loadingComponent.hide();
+        this.appComponent.loadingComponent.hide();
         this.appComponent.beesComponent.addBees(this.appManager.dataManager.bees);
     }
 

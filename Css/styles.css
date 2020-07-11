@@ -23,9 +23,10 @@
 }
 
 .LoadinComponent{
+    position: absolute;
     background-color: royalblue;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     float: left;
 }
 
@@ -39,23 +40,29 @@
     height: 100%;
 }
 
-.BeesComponent, .PostComponent, .ToDosComponent, .AlbumComponent{
+.BeesComponent{
     background-color: cadetblue;
     width: 50%;
     height: 100%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .PostComponent{
     background-color: chocolate;
+    width: 50%;
+    height: 100%;
 }
 
 .ToDosComponent{
     background-color: cornflowerblue;
+    width: 50%;
+    height: 100%;
 }
 
 .AlbumComponent{
     background-color: darkblue;
+    width: 50%;
+    height: 100%;
 }
 
 .BeeComponent{
