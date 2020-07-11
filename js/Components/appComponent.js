@@ -12,7 +12,7 @@ class AppComponent extends Component {
 
         this.loadingComponent = new LoadinComponent(this.container);
         this.beesComponent = new BeesComponent(this.section1);
-        this.postComponent = new PostComponent(this.section1);
+        this.postsComponent = new PostsComponent(this.section1);
         this.toDosComponent = new ToDosComponent(this.section2);
         this.albumComponent = new AlbumComponent(this.section2);
 
