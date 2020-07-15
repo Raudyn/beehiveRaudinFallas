@@ -13,5 +13,4 @@ class PostsComponent extends Component {
             var postComponent = new PostComponent(this.container, post);
         });
     }
-    
 }

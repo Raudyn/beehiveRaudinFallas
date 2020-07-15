@@ -16,12 +16,24 @@ class PostComponent extends Component {
         body.classList.add('bodyPost');
         body.innerHTML = model.body;
         this.container.appendChild(body);
-        this.container.onclick = this.onContainerClick.bind(this);
+        this.container.onclick = this.onContainerClick.bind(this); 
+
+        var commentsContainer = document.createElement('div');
+        commentsContainer.classList.add('CommentsContainer');
+        this.container.appendChild(commentsContainer);
+
+        model.comments.forEach(comm => {
+            var commentP = document.createElement('p');
+            commentP.id = 'Comments';
+            commentP.classList.add('Comments');
+            commentP.innerHTML = comm.body;
+            commentsContainer.appendChild(commentP);
+        });
     }
 
     onContainerClick(){
-        //console.log(this.model);
         var appManager = AppManager.getInstance();
+        //appManager.uiManager.showComentsToPost(this.model);
            
     }
 }
