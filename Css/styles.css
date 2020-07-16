@@ -84,17 +84,31 @@
     height: 100%;
 }
 
-.BeeComponent{
+.beeComponent{
     margin: auto;
-    width: 90%;
-    height: 100px;
+    width: 100%;
+    height: auto;
     margin-bottom: 5px;
     background-color:whitesmoke;
     border: solid 5px rgba(73, 74, 84, 0.1);
+
+    display: flex;
+    flex-direction: row;
 }
 
+.bee-col1 {
+
+}
+
+.bee-col2 {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+
 .BeeComponentName, .UserNameBee{
-    text-align: center;
+    /* text-align: center; */
 }
 
 
@@ -114,4 +128,9 @@
     .ToDosComponent, .AlbumComponent{
         float: left;
     }
+}
+
+.imageContainer {
+    width: 100px;
+    height: 100px;
 }

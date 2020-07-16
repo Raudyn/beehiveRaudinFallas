@@ -1,34 +1,41 @@
 class BeeComponent extends Component {
-    constructor(parent, model){
+    constructor(parent, model) {
         super(parent);
         this.model = model;
-        this.container.id = 'BeeComponent';
-        this.container.classList.add('BeeComponent');
+        this.container.id = 'beeComponent';
+        this.container.classList.add('beeComponent');
+
+        this.col1 = document.createElement('div');
+        this.col1.classList.add('bee-col1')
+        this.container.appendChild(this.col1);
+
+        this.col2 = document.createElement('div');
+        this.col2.classList.add('bee-col2')
+        this.container.appendChild(this.col2);
+
+        var imageContainer = document.createElement('img')
+        imageContainer.id = 'imageContainer';
+        imageContainer.classList.add('imageContainer');
+        imageContainer.src = model.image;
+        this.col1.appendChild(imageContainer);
 
         var name = document.createElement('p');
         name.classList.add('BeeComponentName');
         name.innerHTML = model.name;
-        this.container.appendChild(name);
+        this.col2.appendChild(name);
 
         var userName = document.createElement('p');
         userName.classList.add('UserNameBee');
         userName.innerHTML = model.username;
-        this.container.appendChild(userName);
-
-        
-        var ImageContainer = document.createElement('div')
-        ImageContainer.id = 'ImageContainer';
-        ImageContainer.classList.add('ImageContainer');
-        ImageContainer.style.background = model.image;
-        this.container.appendChild(ImageContainer);
+        this.col2.appendChild(userName);
 
         this.container.onclick = this.onContainerClick.bind(this);
     }
 
-    onContainerClick(){
+    onContainerClick() {
         //console.log(this.model);
         var appManager = AppManager.getInstance();
         appManager.uiManager.refreshPostsComponet(this.model);
-        
+
     }
 }
