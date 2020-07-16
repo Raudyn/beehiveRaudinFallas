@@ -12,6 +12,7 @@ class UIManager {
     showUI(){
         this.appComponent.loadingComponent.hide();
         this.appComponent.beesComponent.addBees(this.appManager.dataManager.bees);
+        console.log(this.appManager.dataManager.bees);
     }
 
     refreshPostsComponet(bee){

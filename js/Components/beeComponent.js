@@ -15,6 +15,13 @@ class BeeComponent extends Component {
         userName.innerHTML = model.username;
         this.container.appendChild(userName);
 
+        
+        var ImageContainer = document.createElement('div')
+        ImageContainer.id = 'ImageContainer';
+        ImageContainer.classList.add('ImageContainer');
+        ImageContainer.style.background = model.image;
+        this.container.appendChild(ImageContainer);
+
         this.container.onclick = this.onContainerClick.bind(this);
     }
 
