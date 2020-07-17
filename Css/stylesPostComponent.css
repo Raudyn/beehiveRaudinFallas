@@ -31,10 +31,49 @@
     align-items: center;
 }
 
-.Comments{
+.commentBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100px;
+    height: 30px;
+    background-color: #54686F;
+}
+
+.CommentsContainer{
+    margin-top: 10px;
+}
+
+.commBox{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: inherit;
+    justify-content: space-between;
     margin: auto;
     margin-bottom: 5px;
-    width: 95%;
-    height: 100px;
+    width: 90%;
+    height: 200px;
     border: solid 4px rgba(75, 78, 171, 0.2);
+}
+
+.titleComm {
+    font-size: 20px;
+    text-align: -webkit-match-parent;
+    padding: 5px;
+}
+
+.bodyComm {
+    font-size: 15px;
+    padding: 10px;
+    text-align: unset;
+}
+
+.emailComm {
+    height: 45%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 2px;
 }

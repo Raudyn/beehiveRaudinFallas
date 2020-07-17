@@ -6,10 +6,10 @@ class Component {
     }
 
     hide(){
-        this.container.hidden = true;
+        this.container.style.display = 'none';
     }
 
     show(){
-        this.container.hidden = false;
+        this.container.style.display = 'block';
     }
 }

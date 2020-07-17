@@ -1,0 +1,54 @@
+.commentFormComponent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(93, 31, 163, 0.4);
+    width: 100%;
+    height: 90%;
+}
+
+.formBackGround {
+    background-color: white;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleForm {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.labelTitleComment, .labelBody{
+    font-size: 1em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.inputTitleComment {
+    width: 90%;
+    height: 25px;
+}
+
+.inputBody {
+    width: 90%;
+    height: 100px;
+
+}
+
+.btnContainer {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+}
+
+.btnCancel, .btnOk {
+    width: 100px;
+    height: 35px;
+}

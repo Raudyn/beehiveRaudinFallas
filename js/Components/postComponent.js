@@ -16,24 +16,52 @@ class PostComponent extends Component {
         body.classList.add('bodyPost');
         body.innerHTML = model.body;
         this.container.appendChild(body);
-        this.container.onclick = this.onContainerClick.bind(this); 
+
+        var addCommentBtn = document.createElement('div');
+        addCommentBtn.id = 'commentBtn';
+        addCommentBtn.classList.add('commentBtn');
+        this.container.appendChild(addCommentBtn);
+        addCommentBtn.onclick = this.addCommentBtn.bind(this); 
+
+        var titleBtn = document.createElement('p');
+        titleBtn.id = 'titleBtn';
+        titleBtn.classList.add('titleBtn');
+        titleBtn.innerHTML = 'Add Comment';
+        addCommentBtn.appendChild(titleBtn);
+
 
         var commentsContainer = document.createElement('div');
         commentsContainer.classList.add('CommentsContainer');
         this.container.appendChild(commentsContainer);
 
         model.comments.forEach(comm => {
+
+            var commBox = document.createElement('div');
+            commBox.id = 'commBox';
+            commBox.classList.add('commBox');
+            commentsContainer.appendChild(commBox);
+
+            var titleP = document.createElement('p');
+            titleP.id = 'titleComm';
+            titleP.classList.add('titleComm');
+            titleP.innerHTML = comm.name;
+            commBox.appendChild(titleP);
+
             var commentP = document.createElement('p');
-            commentP.id = 'Comments';
-            commentP.classList.add('Comments');
+            commentP.id = 'bodyComm';
+            commentP.classList.add('bodyComm');
             commentP.innerHTML = comm.body;
-            commentsContainer.appendChild(commentP);
+            commBox.appendChild(commentP);
+
+            var emailP = document.createElement('p');
+            emailP.id = 'emailComm';
+            emailP.classList.add('emailComm');
+            emailP.innerHTML = comm.email;
+            commBox.appendChild(emailP);
         });
     }
 
-    onContainerClick(){
-        var appManager = AppManager.getInstance();
-        //appManager.uiManager.showComentsToPost(this.model);
-           
+    addCommentBtn(){
+        var appManager = AppManager.getInstance().uiManager.showCommentForm(this.model);
     }
 }

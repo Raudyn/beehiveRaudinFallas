@@ -39,7 +39,7 @@
     background-color: white;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 90%;
     float: left;
 }
 
@@ -55,7 +55,7 @@
 
 .BeesComponent{
     background-color: white;
-    width: 50%;
+    width: 25%;
     height: 100%;
     overflow-y: scroll;
 }
@@ -74,24 +74,23 @@
 
 .ToDosComponent{
     background-color: cornflowerblue;
-    width: 50%;
+    width: 25%;
     height: 100%;
 }
 
 .AlbumComponent{
     background-color: darkblue;
-    width: 50%;
+    width: 25%;
     height: 100%;
 }
 
 .beeComponent{
     margin: auto;
-    width: 100%;
+    width: 90%;
     height: auto;
     margin-bottom: 5px;
     background-color:whitesmoke;
     border: solid 5px rgba(73, 74, 84, 0.1);
-
     display: flex;
     flex-direction: row;
 }
@@ -117,17 +116,16 @@
 
 @media(max-width: 800px){
     .appComponent{
-        flex-direction: column;
+        
     }
 
-    .section1, .section2 {
-        width: 100%;
-        height: 100vh;
-    }
-
-    .ToDosComponent, .AlbumComponent{
+    .BeesComponent {
         float: left;
     }
+
+    .ToDosComponent, .AlbumComponent {
+        display: none;
+    } 
 }
 
 .imageContainer {

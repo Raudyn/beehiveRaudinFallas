@@ -46,6 +46,7 @@ class DataManager { // se encarga de desscargar solo los datos
                     beeData.email,
                     beeData.website,
                     beeData.image,
+                    beeData.owner,
                     beeData.id);
                 this.bees.push(bee);
             });
