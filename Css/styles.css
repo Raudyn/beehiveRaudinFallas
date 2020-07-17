@@ -119,8 +119,9 @@
         
     }
 
-    .BeesComponent {
+    .BeesComponent, .PostsComponent {
         float: left;
+        width: 50%;
     }
 
     .ToDosComponent, .AlbumComponent {
