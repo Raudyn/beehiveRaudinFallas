@@ -55,7 +55,7 @@ class CommentFormComponent extends Component {
         this.container.style.display = 'none';
     }
 
-    show(post){
+    show(){
         this.container.style.display = 'Flex';
     }
 

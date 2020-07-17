@@ -20,7 +20,7 @@ class UIManager {
 
     showCommentForm(post){
         this.postReceiving = post;
-        this.appComponent.commentFormComponent.show(post)
+        this.appComponent.commentFormComponent.show();
     }
 
     hideCommentForm(){
