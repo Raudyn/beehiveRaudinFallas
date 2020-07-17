@@ -5,11 +5,16 @@ class PostComponent extends Component {
         this.container.id = 'PostComponent';
         this.container.classList.add('PostComponent');
 
+        var headerPostComp = document.createElement('div');
+        headerPostComp.id = 'headerPostComp'; 
+        headerPostComp.classList.add('headerPostComp');
+        this.container.appendChild(headerPostComp);
+
         var title = document.createElement('p');
         title.id = 'titlePost';
         title.classList.add('titlePost');
         title.innerHTML = model.title;
-        this.container.appendChild(title);
+        headerPostComp.appendChild(title);
 
         var body = document.createElement('p');
         body.id = 'bodyPost';
