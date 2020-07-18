@@ -38,17 +38,24 @@ class CommentFormComponent extends Component {
         btnContainer.classList.add('btnContainer');
         formBackGround.appendChild(btnContainer);
 
-        var btnCancel = document.createElement('button');
+        var btnOk = document.createElement('div');
+        btnOk.classList.add('btnOk');
+        var pContent = document.createElement('p');
+        pContent.classList.add('pContent');
+        pContent.innerHTML = 'Ok';
+        btnOk.appendChild(pContent);
+        btnContainer.appendChild(btnOk);
+        btnOk.onclick = this.onClickOk.bind(this);
+
+        var btnCancel = document.createElement('div');
         btnCancel.classList.add('btnCancel');
-        btnCancel.innerHTML = 'Cancel';
+        var pContent = document.createElement('p');
+        pContent.classList.add('pContent');
+        pContent.innerHTML = 'Cancel';
+        btnCancel.appendChild(pContent);
         btnContainer.appendChild(btnCancel);
         btnContainer.onclick = this.onClickCancel.bind(this);
 
-        var btnOk = document.createElement('button');
-        btnOk.classList.add('btnOk');
-        btnOk.innerHTML = 'Ok';
-        btnContainer.appendChild(btnOk);
-        btnOk.onclick = this.onClickOk.bind(this);
     }
 
     hide(){
@@ -59,14 +66,20 @@ class CommentFormComponent extends Component {
         this.container.style.display = 'Flex';
     }
 
-    onClickCancel(){
-        var appManager = AppManager.getInstance().uiManager.hideCommentForm();
-    }
-
     onClickOk(){
         var newtitle = this.inputTitleComment.value;
         var newBody = this.inputBody.value;
-        var appManager = AppManager.getInstance().uiManager.addNewComment(newtitle, newBody);
-        //Validar los campos
+
+        if (newtitle == '' || newBody == '') {
+            AppManager.getInstance().uiManager.showAlertForm();
+        } else {
+            AppManager.getInstance().uiManager.addNewComment(newtitle, newBody);   
+        }
+        
     }
+
+    onClickCancel(){
+        AppManager.getInstance().uiManager.hideCommentForm();
+    }
+
 }

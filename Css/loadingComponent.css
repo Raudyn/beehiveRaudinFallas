@@ -1,0 +1,22 @@
+.loadinComponent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    float: left;
+}
+
+.loadinTitle{
+    color: slategray;
+}
+
+.circleContainer {
+    margin-bottom: 50px;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+}

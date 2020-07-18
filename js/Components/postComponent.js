@@ -2,8 +2,8 @@ class PostComponent extends Component {
     constructor(parent, model){
         super(parent);
         this.model = model;
-        this.container.id = 'PostComponent';
-        this.container.classList.add('PostComponent');
+        this.container.id = 'postComponent';
+        this.container.classList.add('postComponent');
 
         var headerPostComp = document.createElement('div');
         headerPostComp.id = 'headerPostComp'; 
