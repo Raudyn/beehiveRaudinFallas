@@ -6,10 +6,10 @@ class LoadinComponent extends Component{
 
         var circleContainer = document.createElement('div');
         circleContainer.classList.add('circleContainer');
-        circleContainer.style.backgroundImage = "url('images/Loading/circleLoading.png')";
+        circleContainer.style.backgroundImage = "url('images/Loading/giphy.gif')";
         this.container.appendChild(circleContainer);
 
-        this.tween = gsap.to(circleContainer, {rotation: 360, duration: 2, ease: "linear", repeat: -1});
+        //this.tween = gsap.to(circleContainer, {rotation: 360, duration: 2, ease: "linear", repeat: -1});
 
 
         var loadinTitle = document.createElement('p');
@@ -19,7 +19,7 @@ class LoadinComponent extends Component{
     }
 
     hideLoader(){
-        this.tween.kill();
+        //this.tween.kill();
         this.container.style.display = 'none';
     }
 }

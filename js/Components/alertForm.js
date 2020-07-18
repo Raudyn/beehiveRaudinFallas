@@ -22,6 +22,7 @@ class AlertForm extends Component {
         this.closeBtn.appendChild(inner);
         alertComponent.appendChild(this.closeBtn);
         this.closeBtn.onclick = this.closeBtnClick.bind(this);
+        
     }
 
     closeBtnClick(){
