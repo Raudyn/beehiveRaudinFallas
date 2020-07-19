@@ -29,6 +29,16 @@ class BeeComponent extends Component {
         userName.innerHTML = model.username;
         this.col2.appendChild(userName);
 
+        var useremail = document.createElement('p');
+        useremail.classList.add('useremail');
+        useremail.innerHTML = model.email;
+        this.col2.appendChild(useremail);
+
+        var userPhone = document.createElement('p');
+        userPhone.classList.add('userPhone');
+        userPhone.innerHTML = model.phone;
+        this.col2.appendChild(userPhone);
+
         this.container.onclick = this.onContainerClick.bind(this);
     }
 

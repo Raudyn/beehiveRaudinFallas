@@ -38,7 +38,7 @@
 
 .BeesComponent{
     background-color: white;
-    width: 25%;
+    width: 40%;
     height: 100%;
     overflow-y: scroll;
 }
@@ -90,20 +90,21 @@
 .beeComponent{
     margin: auto;
     margin-top: 20px;
-    width: 90%;
-    height: auto;
+    width: 95%;
+    height: 150px;
     margin-bottom: 5px;
     background-color: whitesmoke;
     display: flex;
     flex-direction: row;
 }
 
-.bee-col2 {
+.bee-col2, .bee-col1 {
     display: flex;
+    align-items: end;
     flex-direction: column;
     padding-left: 10px;
+    justify-content: center;
 }
-
 /*querys*/
 
 @media(max-width: 800px){
