@@ -62,8 +62,13 @@ class CommentFormComponent extends Component {
         this.container.style.display = 'none';
     }
 
+    hideJquery(){
+        $("#commentFormComponent").hide(600);
+    }
+
     show(){
-        this.container.style.display = 'Flex';
+        $("#commentFormComponent").show(600);
+        //this.container.style.display = 'Flex';
     }
 
     onClickOk(){
@@ -79,7 +84,7 @@ class CommentFormComponent extends Component {
     }
 
     onClickCancel(){
-        AppManager.getInstance().uiManager.hideCommentForm();
+        AppManager.getInstance().uiManager.hideCommentFormJquery();
     }
 
 }

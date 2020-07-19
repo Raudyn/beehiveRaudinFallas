@@ -93,7 +93,7 @@
     width: 95%;
     height: 150px;
     margin-bottom: 5px;
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;
     flex-direction: row;
 }

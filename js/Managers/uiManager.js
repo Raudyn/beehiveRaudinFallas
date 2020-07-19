@@ -32,6 +32,10 @@ class UIManager {
         this.appComponent.commentFormComponent.hide();
     }
 
+    hideCommentFormJquery(){
+        this.appComponent.commentFormComponent.hideJquery();
+    }
+
     showAlertForm(){
         this.appComponent.alertForm.showAlert();
     }

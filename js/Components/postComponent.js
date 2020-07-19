@@ -25,6 +25,7 @@ class PostComponent extends Component {
         var addCommentBtn = document.createElement('div');
         addCommentBtn.id = 'commentBtn';
         addCommentBtn.classList.add('commentBtn');
+        addCommentBtn.value = 'ocultar';
         this.container.appendChild(addCommentBtn);
         addCommentBtn.onclick = this.addCommentBtn.bind(this); 
 
