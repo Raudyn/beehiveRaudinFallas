@@ -10,6 +10,27 @@
     overflow-y: scroll;
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
 }
+
+.postComponent::-webkit-scrollbar {
+    width: 4px;     /* Tamaño del scroll en vertical */
+    height: 4px;    /* Tamaño del scroll en horizontal */
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+.postComponent::-webkit-scrollbar-thumb {
+    background-color: rgba(15, 0, 15, 0.3);
+    border-radius: 4px;
+}
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+.postComponent::-webkit-scrollbar-thumb:hover {
+    background-color: #15354D;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* Cambiamos el fondo cuando esté en active */
+.postComponent::-webkit-scrollbar-thumb:active {
+    background-color: #4482A7;
+}
+
 .headerPostComp{
     color: white;
     background-color: #15354D;
