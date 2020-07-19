@@ -16,7 +16,7 @@ class UIManager {
     showUI(){
         this.appComponent.loadingComponent.hideLoader();
         this.appComponent.beesComponent.addBees(this.appManager.dataManager.bees);
-        //console.log(this.appManager.dataManager.bees);
+        console.log(this.appManager.dataManager.bees);
     }
 
     showCommentForm(post){
@@ -51,6 +51,7 @@ class UIManager {
     refreshPostsComponet(bee){
         this.beemodel = bee;
         this.appComponent.postsComponent.showBeePost(bee);
+        this.appComponent.albumComponent.addAlbums(bee);
     }
 
     showComentsToPost(comment){

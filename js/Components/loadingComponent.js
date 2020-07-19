@@ -13,7 +13,7 @@ class LoadinComponent extends Component{
 
 
         var loadinTitle = document.createElement('p');
-        loadinTitle.innerText = 'LOADIN';
+        loadinTitle.innerText = 'Wait For The Server';
         this.container.appendChild(loadinTitle);
         
     }

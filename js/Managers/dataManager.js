@@ -107,8 +107,6 @@ class DataManager { // se encarga de desscargar solo los datos
                 this.addCommentToPost(comment);
             }
 
-            this.appManager.uiManager.showUI();
-
         } else {
             console.log('error');
         }
@@ -201,6 +199,9 @@ class DataManager { // se encarga de desscargar solo los datos
                 this.toDos.push(todo);
                 this.addToDosToBee(todo);
             }
+
+            this.appManager.uiManager.showUI();
+            
         } else {
             console.log('erroren on request');
         }

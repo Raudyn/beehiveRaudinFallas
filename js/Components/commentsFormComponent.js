@@ -11,7 +11,7 @@ class CommentFormComponent extends Component {
 
         var titleForm = document.createElement('p');
         titleForm.classList.add('titleForm');
-        titleForm.innerHTML = 'What Would like to comment on ??? post';
+        titleForm.innerHTML = 'What Would like to comment on ¿¿?? post';
         formBackGround.appendChild(titleForm);
 
         var labelTitleComment = document.createElement('label');
@@ -67,13 +67,13 @@ class CommentFormComponent extends Component {
     }
 
     onClickOk(){
-        var newtitle = this.inputTitleComment.value;
-        var newBody = this.inputBody.value;
-
-        if (newtitle == '' || newBody == '') {
+        
+        if (this.inputTitleComment.value == '' || this.inputBody.value == '') {
             AppManager.getInstance().uiManager.showAlertForm();
         } else {
-            AppManager.getInstance().uiManager.addNewComment(newtitle, newBody);   
+            AppManager.getInstance().uiManager.addNewComment(this.inputTitleComment.value, this.inputBody.value);
+            this.inputTitleComment.value = '';
+            this.inputBody.value = '';   
         }
         
     }
