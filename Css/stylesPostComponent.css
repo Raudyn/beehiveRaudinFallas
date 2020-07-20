@@ -70,6 +70,12 @@
     background-color: #4482A7;
     font-size: 12px;
     color: white;
+    cursor: pointer;
+}
+
+.commentBtn:hover {
+    background-color: brown;
+    transition: 0.5s;
 }
 
 .CommentsContainer{

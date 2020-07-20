@@ -63,4 +63,10 @@
     background-color: #4482A7;
     color: white;
     font-size: 12px;
+    cursor: pointer;
+}
+
+.btnCancel:hover, .btnOk:hover  {
+    background-color: brown;
+    transition: 0.5s;
 }
