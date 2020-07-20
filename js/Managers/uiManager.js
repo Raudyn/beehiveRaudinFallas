@@ -2,7 +2,7 @@ class UIManager {
     constructor(appManager) {
         this.appManager = appManager;
         this.postReceiving = null,
-        this.beemodel = null;
+            this.beemodel = null;
         this.headerComponent = new HeaderComponent(document.body);
         this.appComponent = new AppComponent(document.body);
         this.appComponent.commentFormComponent.hide();
@@ -13,38 +13,38 @@ class UIManager {
         //console.log('SHOW LOADING');
     }
 
-    showUI(){
+    showUI() {
         this.appComponent.loadingComponent.hideLoader();
         this.appComponent.beesComponent.addBees(this.appManager.dataManager.bees);
         console.log(this.appManager.dataManager.bees);
     }
 
-    showCommentForm(post){
+    showCommentForm(post) {
         this.postReceiving = post;
         this.appComponent.commentFormComponent.show();
     }
 
-    showCommentFormAlert(){
+    showCommentFormAlert() {
         this.appComponent.commentFormComponent.show();
     }
-    
-    hideCommentForm(){
+
+    hideCommentForm() {
         this.appComponent.commentFormComponent.hide();
     }
 
-    hideCommentFormJquery(){
+    hideCommentFormJquery() {
         this.appComponent.commentFormComponent.hideJquery();
     }
 
-    showAlertForm(){
+    showAlertForm() {
         this.appComponent.alertForm.showAlert();
     }
 
-    hideAlertForm(){
+    hideAlertForm() {
         this.appComponent.alertForm.hideAlert();
     }
 
-    addNewComment(newtitle, newBody){
+    addNewComment(newtitle, newBody) {
         var comment = new Comment(newBody, this.beemodel.email, this.beemodel.id, newtitle, this.beemodel.postId);
         this.postReceiving.addComment(comment);
         //this.appComponent.commentFormComponent.hide();
@@ -52,13 +52,13 @@ class UIManager {
         console.log(this.appManager.dataManager.bees);
     }
 
-    refreshPostsComponet(bee){
+    refreshPostsComponet(bee) {
         this.beemodel = bee;
         this.appComponent.postsComponent.showBeePost(bee);
         this.appComponent.albumComponent.addAlbums(bee);
     }
 
-    showComentsToPost(comment){
+    showComentsToPost(comment) {
         this.appComponent.postsComponent.showBeePost(comment);
     }
 }

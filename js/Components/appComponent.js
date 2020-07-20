@@ -1,10 +1,10 @@
 class AppComponent extends Component {
-    constructor(parent){
+    constructor(parent) {
         super(parent);
         this.container.id = 'appComponent';
         this.container.classList.add('appComponent');
 
-        
+
         this.loadingComponent = new LoadinComponent(this.container);
         this.beesComponent = new BeesComponent(this.container);
         this.postsComponent = new PostsComponent(this.container);

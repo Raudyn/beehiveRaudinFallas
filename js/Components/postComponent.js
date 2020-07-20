@@ -1,12 +1,12 @@
 class PostComponent extends Component {
-    constructor(parent, model){
+    constructor(parent, model) {
         super(parent);
         this.model = model;
         this.container.id = 'postComponent';
         this.container.classList.add('postComponent');
 
         var headerPostComp = document.createElement('div');
-        headerPostComp.id = 'headerPostComp'; 
+        headerPostComp.id = 'headerPostComp';
         headerPostComp.classList.add('headerPostComp');
         this.container.appendChild(headerPostComp);
 
@@ -27,7 +27,7 @@ class PostComponent extends Component {
         addCommentBtn.classList.add('commentBtn');
         addCommentBtn.value = 'ocultar';
         this.container.appendChild(addCommentBtn);
-        addCommentBtn.onclick = this.addCommentBtn.bind(this); 
+        addCommentBtn.onclick = this.addCommentBtn.bind(this);
 
         var titleBtn = document.createElement('p');
         titleBtn.id = 'titleBtn';
@@ -67,7 +67,7 @@ class PostComponent extends Component {
         });
     }
 
-    addCommentBtn(){
+    addCommentBtn() {
         var appManager = AppManager.getInstance().uiManager.showCommentForm(this.model);
     }
 }

@@ -1,5 +1,5 @@
 class AlbumContainerComponent extends Component {
-    constructor(parent, model){ // model = album 
+    constructor(parent, model) { // model = album 
         super(parent)
         this.parent = parent;
         this.model = model;
@@ -14,19 +14,19 @@ class AlbumContainerComponent extends Component {
 
         model.photos.forEach(photo => {
 
-           var photoContainer = document.createElement('div');
-           photoContainer.classList.add('photoContainer');
-           this.container.appendChild(photoContainer);
+            var photoContainer = document.createElement('div');
+            photoContainer.classList.add('photoContainer');
+            this.container.appendChild(photoContainer);
 
-           var titlePhoto = document.createElement('p');
-           titlePhoto.classList.add('titlePhoto');
-           titlePhoto.innerHTML = photo.title;
-           photoContainer.appendChild(titlePhoto);
+            var titlePhoto = document.createElement('p');
+            titlePhoto.classList.add('titlePhoto');
+            titlePhoto.innerHTML = photo.title;
+            photoContainer.appendChild(titlePhoto);
 
-           var imgContainer = document.createElement('img');
-           imgContainer.classList.add('imgContainer');
-           imgContainer.src = photo.thumbnailUrl;
-           photoContainer.appendChild(imgContainer);
+            var imgContainer = document.createElement('img');
+            imgContainer.classList.add('imgContainer');
+            imgContainer.src = photo.thumbnailUrl;
+            photoContainer.appendChild(imgContainer);
 
         });
     }

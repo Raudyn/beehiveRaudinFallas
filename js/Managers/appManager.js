@@ -1,6 +1,6 @@
-var AppManager = (function() {
+var AppManager = (function () {
 
-    function AppManager(){
+    function AppManager() {
         this.dataManager = new DataManager(this);
         this.uiManager = new UIManager(this);
         this.dataManager.start();
@@ -9,7 +9,7 @@ var AppManager = (function() {
     var instance;
 
     return {
-        getInstance: function() {
+        getInstance: function () {
             if (!instance) {
                 instance = new AppManager();
                 delete instance.constructor;

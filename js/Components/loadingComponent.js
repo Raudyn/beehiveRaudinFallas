@@ -1,5 +1,5 @@
-class LoadinComponent extends Component{
-    constructor(parent){
+class LoadinComponent extends Component {
+    constructor(parent) {
         super(parent);
         this.container.id = 'loadinComponent';
         this.container.classList.add('loadinComponent');
@@ -15,10 +15,10 @@ class LoadinComponent extends Component{
         var loadinTitle = document.createElement('p');
         loadinTitle.innerText = 'Wait For The Server';
         this.container.appendChild(loadinTitle);
-        
+
     }
 
-    hideLoader(){
+    hideLoader() {
         //this.tween.kill();
         this.container.style.display = 'none';
     }

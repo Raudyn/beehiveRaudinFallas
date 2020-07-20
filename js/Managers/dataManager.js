@@ -201,7 +201,7 @@ class DataManager { // se encarga de desscargar solo los datos
             }
 
             this.appManager.uiManager.showUI();
-            
+
         } else {
             console.log('erroren on request');
         }

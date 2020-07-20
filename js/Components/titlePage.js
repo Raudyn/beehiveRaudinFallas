@@ -1,5 +1,5 @@
 class TitlePage {
-    constructor(parent){
+    constructor(parent) {
         this.parent = parent;
         var title = document.createElement('p');
         title.classList.add('titlePage');

@@ -1,5 +1,5 @@
 class ToDosComponent extends Component {
-    constructor(parent){
+    constructor(parent) {
         super(parent);
         this.container.id = 'ToDosComponent';
         this.container.classList.add('ToDosComponent');

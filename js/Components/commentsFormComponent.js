@@ -1,5 +1,5 @@
 class CommentFormComponent extends Component {
-    constructor(parent){
+    constructor(parent) {
         super(parent);
         this.container.id = 'commentFormComponent';
         this.container.classList.add('commentFormComponent');
@@ -34,7 +34,7 @@ class CommentFormComponent extends Component {
         this.inputBody.placeholder = 'Enter the body on you post here';
         formBackGround.appendChild(this.inputBody);
 
-        var btnContainer =  document.createElement('div');
+        var btnContainer = document.createElement('div');
         btnContainer.classList.add('btnContainer');
         formBackGround.appendChild(btnContainer);
 
@@ -58,32 +58,32 @@ class CommentFormComponent extends Component {
 
     }
 
-    hide(){
+    hide() {
         this.container.style.display = 'none';
     }
 
-    hideJquery(){
+    hideJquery() {
         $("#commentFormComponent").hide(600);
     }
 
-    show(){
+    show() {
         $("#commentFormComponent").show(600);
         //this.container.style.display = 'Flex';
     }
 
-    onClickOk(){
-        
+    onClickOk() {
+
         if (this.inputTitleComment.value == '' || this.inputBody.value == '') {
             AppManager.getInstance().uiManager.showAlertForm();
         } else {
             AppManager.getInstance().uiManager.addNewComment(this.inputTitleComment.value, this.inputBody.value);
             this.inputTitleComment.value = '';
-            this.inputBody.value = '';   
+            this.inputBody.value = '';
         }
-        
+
     }
 
-    onClickCancel(){
+    onClickCancel() {
         AppManager.getInstance().uiManager.hideCommentFormJquery();
     }
 

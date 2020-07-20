@@ -1,15 +1,15 @@
 class Component {
-    constructor(parent){
+    constructor(parent) {
         this.container = document.createElement('div');
         this.parent = parent;
         this.parent.appendChild(this.container);
     }
 
-    hide(){
+    hide() {
         this.container.style.display = 'none';
     }
 
-    show(){
+    show() {
         this.container.style.display = 'block';
     }
 }

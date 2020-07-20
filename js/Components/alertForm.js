@@ -1,5 +1,5 @@
 class AlertForm extends Component {
-    constructor(parent){
+    constructor(parent) {
         super(parent)
         this.container.id = 'alertForm';
         this.container.classList.add('alertForm');
@@ -22,19 +22,19 @@ class AlertForm extends Component {
         this.closeBtn.appendChild(inner);
         alertComponent.appendChild(this.closeBtn);
         this.closeBtn.onclick = this.closeBtnClick.bind(this);
-        
+
     }
 
-    closeBtnClick(){
+    closeBtnClick() {
         AppManager.getInstance().uiManager.hideAlertForm();
         AppManager.getInstance().uiManager.showCommentFormAlert();
     }
 
-    hideAlert(){
+    hideAlert() {
         this.container.style.display = 'none';
     }
 
-    showAlert(){
+    showAlert() {
         this.container.style.display = 'flex';
     }
 }

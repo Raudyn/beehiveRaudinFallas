@@ -1,12 +1,12 @@
 class PostsComponent extends Component {
-    constructor(parent){
+    constructor(parent) {
         super(parent);
         this.container.id = 'PostsComponent';
         this.container.classList.add('PostsComponent');
         parent.appendChild(this.container);
     }
 
-    showBeePost(bee){
+    showBeePost(bee) {
         this.container.innerHTML = '';
         bee.posts.forEach(post => {
             console.log(post);
