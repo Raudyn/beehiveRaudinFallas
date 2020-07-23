@@ -1,8 +1,8 @@
 class UIManager {
     constructor(appManager) {
         this.appManager = appManager;
-        this.postReceiving = null,
-            this.beemodel = null;
+        this.postReceiving = null;
+        this.beeComponent = null;
         this.headerComponent = new HeaderComponent(document.body);
         this.appComponent = new AppComponent(document.body);
         this.appComponent.commentFormComponent.hide();
@@ -48,14 +48,20 @@ class UIManager {
         var comment = new Comment(newBody, this.beemodel.email, this.beemodel.id, newtitle, this.beemodel.postId);
         this.postReceiving.addComment(comment);
         //this.appComponent.commentFormComponent.hide();
-        this.refreshPostsComponet(this.beemodel);
+        this.refreshPostsComponet(this.beeComponent);
         console.log(this.appManager.dataManager.bees);
     }
 
-    refreshPostsComponet(bee) {
-        this.beemodel = bee;
-        this.appComponent.postsComponent.showBeePost(bee);
-        this.appComponent.albumComponent.addAlbums(bee);
+    refreshPostsComponet(beeComponent) {
+
+        if (this.beeComponent !== null) {
+            this.beeComponent.container.classList.remove('beeComponentSelected');
+        }
+
+        this.beeComponent = beeComponent;
+        this.beeComponent.container.classList.add('beeComponentSelected');
+        this.appComponent.postsComponent.showBeePost(this.beeComponent.model);
+        this.appComponent.albumComponent.addAlbums(this.beeComponent.model);
     }
 
     showComentsToPost(comment) {

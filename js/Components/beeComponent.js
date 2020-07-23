@@ -45,7 +45,7 @@ class BeeComponent extends Component {
     onContainerClick() {
         //console.log(this.model);
         var appManager = AppManager.getInstance();
-        appManager.uiManager.refreshPostsComponet(this.model);
+        appManager.uiManager.refreshPostsComponet(this);
 
     }
 }
