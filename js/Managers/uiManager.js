@@ -63,6 +63,7 @@ class UIManager {
         this.beeComponent.container.classList.add('beeComponentSelected');
         this.appComponent.postsComponent.showBeePost(this.beeComponent.model);
         this.appComponent.albumComponent.addAlbums(this.beeComponent.model);
+        this.appComponent.toDosComponent.addTodos(this.beeComponent.model);
     }
 
     showComentsToPost(comment) {

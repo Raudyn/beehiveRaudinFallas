@@ -9,7 +9,6 @@ class PostsComponent extends Component {
     showBeePost(bee) {
         this.container.innerHTML = '';
         bee.posts.forEach(post => {
-            console.log(post);
             var postComponent = new PostComponent(this.container, post);
         });
     }
