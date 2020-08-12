@@ -1,5 +1,5 @@
 class TodoComponent extends Component {
-    constructor(parent, model){
+    constructor(parent, model) {
         super(parent)
         this.model = model;
         this.container.classList.add('todoComponent');
@@ -9,5 +9,14 @@ class TodoComponent extends Component {
         title1.classList.add('title1');
         title1.innerHTML = model.title;
         this.container.appendChild(title1);
+    }
+
+    completeTodo(e) {
+        this.model.completed = !this.model.completed;
+        if (this.model.completed) {
+            this.container.classList.add('todoComponentComplete');
+        } else {
+            this.container.classList.remove('todoComponentComplete');
+        }
     }
 }

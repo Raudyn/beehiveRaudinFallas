@@ -1,20 +1,26 @@
-.ToDosComponent{
+.ToDosComponent {
     width: 25%;
     height: 100%;
     overflow-y: scroll;
 }
 
 .todoComponent {
+    margin-top: 20px;
     margin: auto;
     padding: 2px;
     width: 95%;
-    height: 60px;
+    min-height: 50px;
+    height: auto;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: .8em;
-    border: solid 1px #e0e0f5;
+    border: solid 2px #e0e0f5;
     margin-bottom: 5px;
+}
+
+.completeTodo {
+    background-color: teal;
 }

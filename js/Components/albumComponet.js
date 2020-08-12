@@ -9,6 +9,11 @@ class AlbumComponent extends Component {
 
     addAlbums(bee) {
         this.container.innerHTML = '';
+        var albumsTitle = document.createElement('p');
+        albumsTitle.innerHTML = 'Albums';
+        albumsTitle.classList.add('albumsTitle', 'titlesdisplay');
+        this.container.appendChild(albumsTitle);
+
         bee.albumss.forEach(album => {
             if (bee.id === album.userId) {
                 var albumContainerComponent = new AlbumContainerComponent(this.container, album);

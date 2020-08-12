@@ -3,6 +3,7 @@ class Component {
         this.container = document.createElement('div');
         this.parent = parent;
         this.parent.appendChild(this.container);
+        this.children = [];
     }
 
     hide() {
@@ -11,5 +12,9 @@ class Component {
 
     show() {
         this.container.style.display = 'block';
+    }
+
+    addChild(component) {
+        this.children.push(component);
     }
 }

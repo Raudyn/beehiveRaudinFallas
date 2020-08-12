@@ -11,6 +11,8 @@ class AppComponent extends Component {
         this.albumComponent = new AlbumComponent(this.container);
         this.toDosComponent = new ToDosComponent(this.container);
         this.commentFormComponent = new CommentFormComponent(this.container);
+        this.postFormComponent = new PostFormComponent(this.container);
+        this.toDosFormComponent = new ToDosFormComponent(this.container);
         this.alertForm = new AlertForm(this.container);
     }
 }

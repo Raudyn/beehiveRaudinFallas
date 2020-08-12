@@ -1,4 +1,4 @@
-.AlbumComponent{
+.AlbumComponent {
     background-color: white;
     width: 45%;
     height: 100%;
@@ -6,30 +6,40 @@
 }
 
 .AlbumComponent::-webkit-scrollbar {
-    width: 8px;     /* Tamaño del scroll en vertical */
-    height: 8px;    /* Tamaño del scroll en horizontal */
+    width: 8px;
+    /* Tamaño del scroll en vertical */
+    height: 8px;
+    /* Tamaño del scroll en horizontal */
 }
 
+
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+
 .AlbumComponent::-webkit-scrollbar-thumb {
     background-color: rgba(15, 0, 15, 0.3);
     border-radius: 4px;
 }
+
+
 /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+
 .AlbumComponent::-webkit-scrollbar-thumb:hover {
     background-color: #15354D;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Cambiamos el fondo cuando esté en active */
+
 .AlbumComponent::-webkit-scrollbar-thumb:active {
     background-color: #4482A7;
 }
 
-.albumTitle{
+.albumTitle {
     font-size: 15px;
 }
 
-.photoContainer{
+.photoContainer {
     margin: auto;
     margin-bottom: 30px;
     display: flex;
@@ -41,37 +51,48 @@
     background-color: white;
 }
 
-.albumContainerComponent{
+.albumContainerComponent {
     margin: auto;
+    margin-top: 20px;
     margin-bottom: 20px;
     width: 90%;
     height: 100%;
     overflow-y: scroll;
     background: white;
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .albumContainerComponent::-webkit-scrollbar {
-    width: 4px;     /* Tamaño del scroll en vertical */
-    height: 4px;    /* Tamaño del scroll en horizontal */
+    width: 4px;
+    /* Tamaño del scroll en vertical */
+    height: 4px;
+    /* Tamaño del scroll en horizontal */
 }
 
+
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+
 .albumContainerComponent::-webkit-scrollbar-thumb {
     background-color: rgba(15, 0, 15, 0.3);
     border-radius: 4px;
 }
+
+
 /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+
 .albumContainerComponent::-webkit-scrollbar-thumb:hover {
     background-color: #15354D;
     box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
+
+
 /* Cambiamos el fondo cuando esté en active */
+
 .albumContainerComponent::-webkit-scrollbar-thumb:active {
     background-color: #4482A7;
 }
 
-.titleAlbum{
+.titleAlbum {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,12 +102,12 @@
     padding: 5px;
 }
 
-.titlePhoto{
+.titlePhoto {
     height: 50px;
     text-align: center;
     padding: 5px;
 }
 
-.imgContainer{
+.imgContainer {
     width: 100%;
 }

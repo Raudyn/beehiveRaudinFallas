@@ -48,6 +48,11 @@ class DataManager { // se encarga de desscargar solo los datos
                     beeData.image,
                     beeData.owner,
                     beeData.id);
+
+                if (bee.owner) {
+                    AppManager.getInstance().owner = bee;
+                }
+
                 this.bees.push(bee);
             });
 
@@ -187,23 +192,24 @@ class DataManager { // se encarga de desscargar solo los datos
     //     photos      //
 
     getToDosComplete(e) {
-
         var request = e.target;
-
         if (request.status === 200) {
             var data = JSON.parse(request.responseText);
-
-            for (let i = 0; i < data.length; i++) {
-                this.Data = data[i];
-                var todo = new ToDo(this.Data.completed, this.Data.id, this.Data.title, this.Data.userId);
-                this.toDos.push(todo);
-                this.addToDosToBee(todo);
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    const todoData = data[key];
+                    var todo = new ToDo(
+                        todoData.completed,
+                        todoData.id,
+                        todoData.title,
+                        todoData.userId
+                    );
+                    this.addToDosToBee(todo);
+                }
             }
-
             this.appManager.uiManager.showUI();
-
         } else {
-            console.log('erroren on request');
+            console.log('Error on request: todos');
         }
     }
 

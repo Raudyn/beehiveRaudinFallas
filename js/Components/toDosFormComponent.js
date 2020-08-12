@@ -1,8 +1,8 @@
-class CommentFormComponent extends Component {
+class ToDosFormComponent extends Component {
     constructor(parent) {
         super(parent);
-        this.container.id = 'commentFormComponent';
-        this.container.classList.add('commentFormComponent');
+        this.container.id = 'toDosFormComponent';
+        this.container.classList.add('toDosFormComponent');
 
         var formBackGround = document.createElement('div');
         formBackGround.id = 'formBackGround';
@@ -11,7 +11,7 @@ class CommentFormComponent extends Component {
 
         var titleForm = document.createElement('p');
         titleForm.classList.add('titleForm');
-        titleForm.innerHTML = 'What Would like to comment on ¿¿?? post';
+        titleForm.innerHTML = 'add new todo';
         formBackGround.appendChild(titleForm);
 
         var labelTitleComment = document.createElement('label');
@@ -21,18 +21,8 @@ class CommentFormComponent extends Component {
 
         this.inputTitleComment = document.createElement('input');
         this.inputTitleComment.classList.add('inputTitleComment');
-        this.inputTitleComment.placeholder = 'Enter you Title comment';
+        this.inputTitleComment.placeholder = 'Enter you Title Post';
         formBackGround.appendChild(this.inputTitleComment);
-
-        var labelBody = document.createElement('label');
-        labelBody.classList.add('labelBody');
-        labelBody.innerHTML = 'Body';
-        formBackGround.appendChild(labelBody);
-
-        this.inputBody = document.createElement('textarea');
-        this.inputBody.classList.add('inputBody');
-        this.inputBody.placeholder = 'Enter the body on you post here';
-        formBackGround.appendChild(this.inputBody);
 
         var btnContainer = document.createElement('div');
         btnContainer.classList.add('btnContainer');
@@ -63,28 +53,27 @@ class CommentFormComponent extends Component {
     }
 
     hideJquery() {
-        $("#commentFormComponent").hide(200);
+        $("#toDosFormComponent").hide(200);
     }
 
     show() {
-        $("#commentFormComponent").show(300);
+        $("#toDosFormComponent").show(300);
         //this.container.style.display = 'Flex';
     }
 
     onClickOk() {
 
-        if (this.inputTitleComment.value == '' || this.inputBody.value == '') {
+        if (this.inputTitleComment.value == '') {
             AppManager.getInstance().uiManager.showAlertForm();
         } else {
-            AppManager.getInstance().uiManager.addNewComment(this.inputTitleComment.value, this.inputBody.value);
+            AppManager.getInstance().uiManager.addNewToDo(this.inputTitleComment.value);
             this.inputTitleComment.value = '';
-            this.inputBody.value = '';
         }
 
     }
 
     onClickCancel() {
-        AppManager.getInstance().uiManager.hideCommentFormJquery();
+        AppManager.getInstance().uiManager.hideFormJquery();
     }
 
 }

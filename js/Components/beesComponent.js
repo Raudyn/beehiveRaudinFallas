@@ -3,13 +3,27 @@ class BeesComponent extends Component {
         super(parent);
         this.container.id = 'BeesComponent';
         this.container.classList.add('BeesComponent');
-        parent.appendChild(this.container);
     }
 
     addBees(bees) {
         //console.log(bees);
+        var beesTitle = document.createElement('p');
+        beesTitle.innerHTML = 'Bees';
+        beesTitle.classList.add('beesTitle', 'titlesdisplay');
+        this.container.appendChild(beesTitle);
+
         bees.forEach(bee => {
             var beeComponent = new BeeComponent(this.container, bee);
+            this.addChild(beeComponent);
+
         });
+    }
+
+    findOwner() {
+        for (let i = 0; i < this.children.length; i++) {
+            if (this.children[i].model.owner) {
+                return this.children[i];
+            }
+        }
     }
 }

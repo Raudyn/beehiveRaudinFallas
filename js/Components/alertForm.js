@@ -27,7 +27,6 @@ class AlertForm extends Component {
 
     closeBtnClick() {
         AppManager.getInstance().uiManager.hideAlertForm();
-        AppManager.getInstance().uiManager.showCommentFormAlert();
     }
 
     hideAlert() {

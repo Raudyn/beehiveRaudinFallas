@@ -1,8 +1,8 @@
-class CommentFormComponent extends Component {
+class PostFormComponent extends Component {
     constructor(parent) {
         super(parent);
-        this.container.id = 'commentFormComponent';
-        this.container.classList.add('commentFormComponent');
+        this.container.id = 'postFormComponent';
+        this.container.classList.add('postFormComponent');
 
         var formBackGround = document.createElement('div');
         formBackGround.id = 'formBackGround';
@@ -11,7 +11,7 @@ class CommentFormComponent extends Component {
 
         var titleForm = document.createElement('p');
         titleForm.classList.add('titleForm');
-        titleForm.innerHTML = 'What Would like to comment on ¿¿?? post';
+        titleForm.innerHTML = 'add new post';
         formBackGround.appendChild(titleForm);
 
         var labelTitleComment = document.createElement('label');
@@ -21,7 +21,7 @@ class CommentFormComponent extends Component {
 
         this.inputTitleComment = document.createElement('input');
         this.inputTitleComment.classList.add('inputTitleComment');
-        this.inputTitleComment.placeholder = 'Enter you Title comment';
+        this.inputTitleComment.placeholder = 'Enter you Title Post';
         formBackGround.appendChild(this.inputTitleComment);
 
         var labelBody = document.createElement('label');
@@ -63,11 +63,11 @@ class CommentFormComponent extends Component {
     }
 
     hideJquery() {
-        $("#commentFormComponent").hide(200);
+        $("#postFormComponent").hide(200);
     }
 
     show() {
-        $("#commentFormComponent").show(300);
+        $("#postFormComponent").show(300);
         //this.container.style.display = 'Flex';
     }
 
@@ -76,7 +76,7 @@ class CommentFormComponent extends Component {
         if (this.inputTitleComment.value == '' || this.inputBody.value == '') {
             AppManager.getInstance().uiManager.showAlertForm();
         } else {
-            AppManager.getInstance().uiManager.addNewComment(this.inputTitleComment.value, this.inputBody.value);
+            AppManager.getInstance().uiManager.addNewPost(this.inputTitleComment.value, this.inputBody.value);
             this.inputTitleComment.value = '';
             this.inputBody.value = '';
         }
@@ -84,7 +84,7 @@ class CommentFormComponent extends Component {
     }
 
     onClickCancel() {
-        AppManager.getInstance().uiManager.hideCommentFormJquery();
+        AppManager.getInstance().uiManager.hidePostJquery();
     }
 
 }
