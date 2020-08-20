@@ -4,7 +4,9 @@ class UIManager {
         this.postReceiving = null;
         this.beeComponent = null;
         this.beemodel = null;
+        this.viewPhoto = null;
         this.headerComponent = new HeaderComponent(document.body);
+        this.miniBar = new MiniBar(document.body);
         this.appComponent = new AppComponent(document.body);
         this.appComponent.commentFormComponent.hide();
         this.appComponent.postFormComponent.hide();
@@ -20,6 +22,14 @@ class UIManager {
         this.appComponent.loadingComponent.hideLoader();
         this.appComponent.beesComponent.addBees(this.appManager.dataManager.bees);
         console.log(this.appManager.dataManager.bees);
+    }
+
+    showViewPic(model) {
+        this.viewPhoto = new ViewPhoto(document.body, model);
+    }
+
+    closeViewPic(id) {
+        this.viewPhoto.eliminarElemento(id);
     }
 
     showCommentForm(post) {
@@ -72,17 +82,12 @@ class UIManager {
         this.beeComponentSelected = this.appComponent.beesComponent.findOwner();
         this.refreshPostsComponet(this.beeComponent, this.beemodel);
     }
+
     addNewToDo(newtitle) {
         var todo = new ToDo(false, this.beemodel.id, newtitle, this.beemodel.userId);
         this.beemodel.todos.unshift(todo);
         this.refreshPostsComponet(this.beeComponent, this.beemodel);
-
-        var request = new XMLHttpRequest();
-        request.open('POST', 'https://beehive-270a2.firebaseio.com/data/todos.json');
-        request.onload = function(e) {
-            console.log(e.target);
-        }
-        request.send(JSON.stringify(todo));
+        this.appManager.dataManager.postTodo(todo);
     }
 
     refreshPostsComponet(beeComponent, bee) {

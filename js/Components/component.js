@@ -17,4 +17,18 @@ class Component {
     addChild(component) {
         this.children.push(component);
     }
+
+    eliminarElemento(id) {
+        this.elemento = document.getElementById(id);
+        if (!this.elemento) {
+            alert("El elemento selecionado no existe");
+        } else {
+            $(this.elemento).hide(200);
+            setTimeout(() => {
+                this.padre = this.elemento.parentNode;
+                this.padre.removeChild(this.elemento);
+            }, 200);
+        }
+    }
+
 }

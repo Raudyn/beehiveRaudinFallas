@@ -13,11 +13,6 @@ class PostsComponent extends Component {
         containerAll.classList.add('containerAll');
         this.container.appendChild(containerAll);
 
-        var postsTitle = document.createElement('p');
-        postsTitle.innerHTML = 'Posts';
-        postsTitle.classList.add('postsTitle', 'titlesdisplay');
-        containerAll.appendChild(postsTitle);
-
         this.btn = document.createElement('img');
         this.btn.classList.add('btnMas');
         this.btn.src = 'images/icons/plus.png';

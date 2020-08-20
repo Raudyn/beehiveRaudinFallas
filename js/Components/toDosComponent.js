@@ -12,11 +12,6 @@ class ToDosComponent extends Component {
         containerAll.classList.add('containerAll');
         this.container.appendChild(containerAll);
 
-        var todosTitle = document.createElement('p');
-        todosTitle.innerHTML = 'ToDos';
-        todosTitle.classList.add('todosTitle', 'titlesdisplay');
-        containerAll.appendChild(todosTitle);
-
         this.btn = document.createElement('img');
         this.btn.classList.add('btnMas');
         this.btn.src = 'images/icons/plus.png';

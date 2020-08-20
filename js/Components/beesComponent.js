@@ -8,7 +8,7 @@ class BeesComponent extends Component {
     addBees(bees) {
         //console.log(bees);
         var beesTitle = document.createElement('p');
-        beesTitle.innerHTML = 'Bees';
+        beesTitle.innerHTML = '';
         beesTitle.classList.add('beesTitle', 'titlesdisplay');
         this.container.appendChild(beesTitle);
 

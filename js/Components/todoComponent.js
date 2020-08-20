@@ -4,11 +4,13 @@ class TodoComponent extends Component {
         this.model = model;
         this.container.classList.add('todoComponent');
         parent.appendChild(this.container);
+        this.container.onclick = this.completeTodo.bind(this);
 
         var title1 = document.createElement('p');
         title1.classList.add('title1');
         title1.innerHTML = model.title;
         this.container.appendChild(title1);
+
     }
 
     completeTodo(e) {
@@ -18,5 +20,7 @@ class TodoComponent extends Component {
         } else {
             this.container.classList.remove('todoComponentComplete');
         }
+
+        AppManager.getInstance().dataManager.putTodo(this.model);
     }
 }

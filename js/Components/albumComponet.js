@@ -10,7 +10,7 @@ class AlbumComponent extends Component {
     addAlbums(bee) {
         this.container.innerHTML = '';
         var albumsTitle = document.createElement('p');
-        albumsTitle.innerHTML = 'Albums';
+        albumsTitle.innerHTML = '';
         albumsTitle.classList.add('albumsTitle', 'titlesdisplay');
         this.container.appendChild(albumsTitle);
 

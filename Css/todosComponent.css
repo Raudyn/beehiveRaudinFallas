@@ -11,16 +11,22 @@
     width: 95%;
     min-height: 50px;
     height: auto;
-    background-color: white;
+    background-color: #f7efef;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
     font-size: .8em;
     border: solid 2px #e0e0f5;
     margin-bottom: 5px;
 }
 
-.completeTodo {
-    background-color: teal;
+.todoComponentComplete {
+    background-color: #15354D;
+    color: white;
+}
+
+.title1 {
+    width: 100%;
+    height: 100%;
 }

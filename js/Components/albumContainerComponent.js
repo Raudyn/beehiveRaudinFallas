@@ -23,11 +23,17 @@ class AlbumContainerComponent extends Component {
             titlePhoto.innerHTML = photo.title;
             photoContainer.appendChild(titlePhoto);
 
-            var imgContainer = document.createElement('img');
-            imgContainer.classList.add('imgContainer');
-            imgContainer.src = photo.thumbnailUrl;
-            photoContainer.appendChild(imgContainer);
+            this.imgContainer = document.createElement('img');
+            this.imgContainer.classList.add('imgContainer');
+            this.imgContainer.src = photo.thumbnailUrl;
+            photoContainer.appendChild(this.imgContainer);
+
+            this.imgContainer.onclick = this.showBigView.bind(this, photo);
 
         });
+    }
+
+    showBigView(photo) {
+        AppManager.getInstance().uiManager.showViewPic(photo);
     }
 }

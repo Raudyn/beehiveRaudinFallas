@@ -213,6 +213,39 @@ class DataManager { // se encarga de desscargar solo los datos
         }
     }
 
+    postTodo(todo) {
+
+        /*/fetch('https://beehive-270a2.firebaseio.com/data/todos.json', {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            credentials: 'same-origin',
+            headers: {
+                'content.Type': 'application/json'
+            },
+            redirect: 'follow',
+            referrerPolicy: 'no-referrer',
+            body: JSON.stringify(todo)
+        }).then(data => {
+
+        }).catch(error => {
+
+        })*/
+
+        var request = new XMLHttpRequest();
+        request.open('PUT', `https://beehive-270a2.firebaseio.com/data/todos/${todo.id}.json`);
+        request.onload = function(e) {
+            /*var data = JSON.parse(e.target.response);
+            todo.id = data.name;*/
+            console.log(todo);
+        }
+        request.send(JSON.stringify(todo));
+    }
+
+    putTodo(todo) {
+
+    }
+
     addToDosToBee(todo) {
 
         this.bees.forEach(bee => {
